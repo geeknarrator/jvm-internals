@@ -90,7 +90,7 @@ public class GCBenchmark {
 
   private static void allocateLargeObjects() {
     List<byte[]> largeObjects = new ArrayList<>();
-    for (int i = 0; i < 5; i++) {  // Reduced from 10 to 5 large objects
+    for (int i = 0; i < 5; i++) {
       if (shouldPerformGC()) {
         largeObjects.clear();
         System.gc();
@@ -115,9 +115,9 @@ public class GCBenchmark {
       }
 
       if (random.nextDouble() < 0.9) {
-        objects.add(new byte[512]); // Reduced to 512B
+        objects.add(new byte[512]);
       } else {
-        objects.add(new byte[102400]); // Reduced to 100KB
+        objects.add(new byte[102400]);
       }
 
       if (i % 5000 == 0) {
